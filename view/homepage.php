@@ -25,7 +25,7 @@
     <div id="adminLogin">
         <button type="submit">Admin</button>
     </div>
-    <form method="post" action="/adminPage" class="adminLoginForm">
+    <form method="post" action="/adminPage" class="adminLoginForm" >
         <label>UserName</label>
         <input type="text" name="adminName">
         <br>

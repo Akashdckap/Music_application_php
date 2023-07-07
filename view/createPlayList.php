@@ -10,13 +10,10 @@
         <input type="text" name="playListName">
         <br>
         <label>Song Name</label>
-        <input type="file" name="SongName">
+        <input type="text" name="SongName">
         <br>
-        <label>Artist Name</label>
-        <input type="text" name="ArtistName">
-        <br>
-        <input type="text" value="<?php echo $gettedId[0]?>" name="loginId">
-        <button type="submit">Done</button>
+<!--        <input type="hidden" value="--><?php //echo $gettedId[0];?><!--" name="loginId">-->
+        <button type="submit" value="<?php echo $gettedId[0];?>">Done</button>
     </form>
 </body>
 </html>

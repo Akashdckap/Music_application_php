@@ -32,5 +32,9 @@ class userController
         $gettedId = $this->userModel->loggedIDIn($gettedLoginId);
         header('location:view/createPlayList.php');
     }
+    public function creationOfPlaylist($creation){
+        print_r($creation);
+//        $this->userModel->insertPlayList();
+    }
 }
 

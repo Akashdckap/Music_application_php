@@ -13,6 +13,9 @@ class userModel extends database{
         $checking = $this->db->query("SELECT id FROM loginForm ORDER BY '$loginID' desc limit 1");
         return $checking->fetch(PDO::FETCH_NUM);
     }
+    public function insertPlayList($playlist){
+        $this->db->query("INSERT INTO playlist(playlistName,songName,logged_user_id)VALUES ()");
+    }
 
 
 

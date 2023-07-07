@@ -42,6 +42,10 @@ class router
 //                            print_r($_POST);
                             $this->controller->logedIN($_POST);
                             break;
+                        case 'playList':
+                            print_r($_POST);
+//                            $this->controller->creationOfPlaylist($_POST);
+                            break;
                         default:
                             $this->controller->listAll();
                     }
