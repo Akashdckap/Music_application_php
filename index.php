@@ -5,7 +5,9 @@ $router = new router();
 
 $router->get('/','list');
 $router->get('/login','loginForm');
-$router->get('/getLoginId','loginId');
-$router->post('createdPlayList','playList');
+$router->post('/createplaylist','createplayList');
+$router->get('/adminPage','adminPage');
+//$router->post('createdPlayList','playList');
+
 
 $router->routing();

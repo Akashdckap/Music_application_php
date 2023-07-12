@@ -12,29 +12,45 @@ class userController
     }
 
     public function loginForm($loginDetails){
-        if($loginDetails['userName']&&$loginDetails['passWord']){
-            $LoginName = $loginDetails['userName'];
-            $LoginPassword = $loginDetails['passWord'];
-            $this->userModel->login($LoginName,$LoginPassword);
-            header("location:view/loginPage.php");
+
+        $check = $this->userModel->loggedIDIn($loginDetails['userEmail'],$loginDetails['passWord']);
+        if($check){
+             $getSongs = $this->userModel->listSongs();
+        require "view/loginPage.php";
         }
         else{
-            echo "Wrong";
-            header("location:/");
+           echo "You are not an login user";
+//           header('location:/');
+        }
+    }
+    public function adminUser($adminDetails){
+        $adminName = $adminDetails['adminName'];
+        $adminEmail = $adminDetails['mail'];
+        $adminPassword = $adminDetails['password'];
+        $checkDetails = $this->userModel->adminLogin($adminName,$adminEmail,$adminPassword);
+        if($checkDetails){
+            header('location:view/dashBoard.php');
+        }
+        else{
+            echo "You are not an Admin user";
         }
     }
     public function listAll(){
        $getSongs = $this->userModel->listSongs();
        require "view/homepage.php";
     }
-    public function logedIN($loggedId)
-    {
-        $gettedId = $this->userModel->loggedIDIn($gettedLoginId);
-        header('location:view/createPlayList.php');
+    public function createPlayList($data){
+        if ($data){
+            $this->userModel->insertPlayList();
+//            var_dump($data);
+            header('location:view/loginPage.php');
+        }
+        else{
+            require "view/createPlayList.php";
+        }
+
     }
-    public function creationOfPlaylist($creation){
-        print_r($creation);
-//        $this->userModel->insertPlayList();
-    }
+
+
 }
 

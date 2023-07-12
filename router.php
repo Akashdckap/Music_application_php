@@ -38,19 +38,19 @@ class router
                         case 'loginForm':
                             $this->controller->loginForm($_POST);
                             break;
-                        case 'loginId':
+                        case 'createplayList':
 //                            print_r($_POST);
-                            $this->controller->logedIN($_POST);
+                            $this->controller->createPlayList($_POST);
                             break;
-                        case 'playList':
-                            print_r($_POST);
-//                            $this->controller->creationOfPlaylist($_POST);
+                        case 'adminPage':
+                            $this->controller->adminUser($_POST);
                             break;
                         default:
                             $this->controller->listAll();
+
                     }
                 } else {
-                    $this->controller->listAll();
+                    $this->controller->song();
                 }
             }
         }
